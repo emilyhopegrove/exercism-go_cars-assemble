@@ -1,5 +1,10 @@
 package cars
 
+const (
+	costPerGroup = uint(95000) // Cost of producing 10 cars together
+	costPerCar   = uint(10000) // Cost of producing an individual car
+)
+
 // CalculateWorkingCarsPerHour calculates how many working cars are
 // produced by the assembly line every hour.
 func CalculateWorkingCarsPerHour(productionRate int, successRate float64) float64 {
@@ -22,10 +27,5 @@ Add together the costs from the groups and the remaining cars to get the total c
 Return the total cost as the result.
 */
 func CalculateCost(carsCount int) uint {
-	const (
-		costPerGroup = uint(95000) // Cost of producing 10 cars together
-		costPerCar   = uint(10000) // Cost of producing an individual car
-	)
-
 	return uint(carsCount/10)*costPerGroup + uint(carsCount%10)*costPerCar
 }
